@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring
+  datasource:
+    driverClassName: org.postgresql.Driver
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/spring
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+        hbm2dll.auto: update
+
+springdoc.api-docs.enabled: true

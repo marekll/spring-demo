@@ -1,0 +1,44 @@
+#spring:
+#  application:
+#    name: spring
+#  datasource:
+#    url: jdbc:h2:mem:test;MODE=PostgreSQL
+#    username: h2
+#    password: h2
+#  jpa:
+#    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#    defer-datasource-initialization: true
+#    hibernate:
+#      hibernate.ddl-auto: update
+#      naming.implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+#      naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        hbm2dll.auto: create
+#  h2.console.enabled: true
+#
+#  sql.init.mode: always
+#
+#springdoc.api-docs.enabled: true
+#
+##spring:
+##  application:
+##    name: spring
+##  datasource:
+##    driverClassName: org.postgresql.Driver
+##    platform: postgres
+##    url: jdbc:postgresql://localhost:5432/spring
+##    username: postgres
+##    password: postgres
+##  jpa:
+##    hibernate:
+##      ddl-auto: update
+##    database-platform: org.hibernate.dialect.PostgreSQLDialect
+##    properties:
+##      hibernate:
+##        format_sql: true
+##        hbm2dll.auto: update
+##
+##
