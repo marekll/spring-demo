@@ -12,7 +12,7 @@ $ ./gradlew bootRun
 Build i przygotowanie:
 
 ```
-$ ./gradlew build jar
+$ ./gradlew bootJar
 ```
 
 Uruchomienie z profilem "test":
