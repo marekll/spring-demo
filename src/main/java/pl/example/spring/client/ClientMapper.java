@@ -10,7 +10,7 @@ import pl.example.spring.client.api.ClientResponse;
 @Mapper(componentModel = "spring")
 interface ClientMapper {
     @Mapping(target = "city", source = "address.city")
-    ClientResponse toResponse(@Valid Client client);
+    ClientResponse toResponse(Client client);
 
     @Mappings({
             @Mapping(target = "id", ignore = true),

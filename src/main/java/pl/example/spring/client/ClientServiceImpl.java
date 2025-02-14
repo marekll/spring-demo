@@ -23,7 +23,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public @NotNull Page<@NotNull ClientResponse> getAllAbbreviatedData(Pageable pageable) {
-        return clientRepository.findAllAbbreviatedData(pageable);
+        return clientRepository.findAll(pageable).map(clientMapper::toResponse);
     }
 
     @Override

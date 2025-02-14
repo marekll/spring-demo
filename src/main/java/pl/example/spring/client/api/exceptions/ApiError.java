@@ -30,4 +30,3 @@ public class ApiError extends RuntimeException {
         return message;
     }
 }
-
