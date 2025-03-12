@@ -1,33 +1,26 @@
-package pl.example.spring.client;
+package pl.example.spring.unit;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import pl.example.spring.client.api.ClientAddRequest;
+import pl.example.spring.api.ClientAddRequest;
+import pl.example.spring.client.ClientMapperAdapter;
+import pl.example.spring.client.ClientRepositoryAdapter;
+import pl.example.spring.client.ClientService;
+import pl.example.spring.client.ClientServiceImpl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@ExtendWith(SpringExtension.class)
-@SpringBootTest
-@ActiveProfiles("test")
+
 class ClientTest {
-    @Autowired
-    private ClientRepository clientRepository;
+    private final ClientRepositoryAdapter clientRepository = new ClientRepositoryAdapter();
 
-    @Autowired
     private ClientService clientService;
-
-    /// / private DataSource dataSource;
 
     @BeforeEach
     public void setup() {
-//        dataSource = TestUtils.getDataSource();
+        clientService = new ClientServiceImpl(clientRepository, new ClientMapperAdapter());
         clientRepository.deleteAll();
 
         clientService.create(ClientAddRequest.builder()

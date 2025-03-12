@@ -1,4 +1,4 @@
-package pl.example.spring;
+package pl.example.spring.config;
 
 import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Bean;

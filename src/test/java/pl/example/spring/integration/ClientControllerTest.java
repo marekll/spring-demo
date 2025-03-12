@@ -1,4 +1,4 @@
-package pl.example.spring;
+package pl.example.spring.integration;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,10 +15,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import pl.example.spring.ClientController;
 import pl.example.spring.client.ClientConfiguration;
 import pl.example.spring.client.ClientRepository;
+import pl.example.spring.client.ClientRepositoryAdapter;
 import pl.example.spring.client.ClientService;
-import pl.example.spring.client.api.ClientAddRequest;
+import pl.example.spring.api.ClientAddRequest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -45,10 +47,13 @@ public class ClientControllerTest {
     @Autowired
     private ClientRepository clientRepository;
 
+    @Autowired
+    private ClientController clientController;
+
     @BeforeEach
     public void setup() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
-        clientRepository.deleteAll();
+//        clientRepository.deleteAll();
         clientService.create(ClientAddRequest.builder()
                 .name("abc")
                 .mail("bbc@abc.com")
