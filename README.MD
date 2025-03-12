@@ -29,3 +29,14 @@ Aby profil był dostępny, należy dodać / zaktualizować odpowiedni plik przed
 ### Przydatne linki ###
 
 * Swagger na Spring Boot: <http://localhost:8080/swagger-ui.html>
+
+
+### TODO LIST ###
+Uporządkować adaptery, porty zgodnie z dobrymi praktykami związanymi z architekturą heksagonalną
+Napisać testy
+pełna dokumentacja
+docker
+rozszerzyć funkcjonalność
+dodać jakąś bardziej skomplikowaną logikę biznesową, żeby testy miały większy sens
+
+etc
